@@ -9,6 +9,6 @@ Phần cứng:
 Phần mềm:
 - Visual Studio
 - Thư viện OpenCV `4.10.0` cho Python
-- Thư viện serial `0.0.97` cho Python
+- Thư viện pyserial `3.5` cho Python
 - Thư viện Servo by `Michael Margolis 1.2.1` trên PlatformIO 
 ## Result
