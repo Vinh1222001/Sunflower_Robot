@@ -5,6 +5,9 @@
 #define MAX_ANGLE_SERVO1 80
 #define MAX_ANGLE_SERVO2 180
 
+#define FRAME_HEIGHT 480
+#define FRAME_WIDTH 640
+
 static uint8_t x_angle = MIN_ANGLE;
 static uint8_t y_angle = MIN_ANGLE;
 
@@ -18,8 +21,8 @@ String faceLocation;
 void setup() {
   Serial.begin(9600);
 
-  myservo1.attach(9);
-  myservo2.attach(10); 
+  myservo1.attach(10);
+  myservo2.attach(9); 
 
   myservo1.write(x_angle);
   myservo2.write(y_angle);
@@ -35,8 +38,8 @@ void loop() {
     int x_location = faceLocation.substring(0, faceLocation.indexOf(',')).toInt();
     int y_location = faceLocation.substring(faceLocation.indexOf(',') + 1).toInt();
 
-    x_angle = map(x_location, 0, 1920, MAX_ANGLE_SERVO1, MIN_ANGLE);
-    y_angle = map(y_location, 0, 1080, MAX_ANGLE_SERVO2, MIN_ANGLE);
+    y_angle = map(x_location, 0, FRAME_WIDTH, MAX_ANGLE_SERVO2, MIN_ANGLE);
+    x_angle = map(y_location, 0, FRAME_HEIGHT, MIN_ANGLE, MAX_ANGLE_SERVO1);
     // Serial.println(x_axis);
     if (x_angle >=0 && x_angle <= MAX_ANGLE_SERVO1)
     {

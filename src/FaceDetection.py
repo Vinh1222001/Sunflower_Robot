@@ -7,23 +7,27 @@ ports = list(list_ports.comports())
 for port in ports:
     print(port.device)
 
-arduinoData = serial.Serial("COM6", 9600)
+portName = "/dev/ttyACM0"
+
+arduinoData = serial.Serial(portName, 9600)
+
+print(cv.__version__)
 
 def send_coordinates_to_arduino(x, y, w, h):
     # Convert the coordinates to a string and send it to Arduino
-    coordinates = f"{x},{y}\r"
+    coordinates = f"{x+w/2},{y+h/2}\r"
     arduinoData.write(coordinates.encode())
-    print(f"X{x}Y{y}\n")
+    print(f"X{x+w/2}Y{y+h/2}\n")
 
 def FaceDetection():
     # x_rotate = 0
     # y_rotate = 0
 
-    capture = cv.VideoCapture(0) #Change the number for the camera that you are using, 0 is for the internal laptop camera, 1 is for an external webcam
+    capture = cv.VideoCapture(0, cv.CAP_V4L2) #Change the number for the camera that you are using, 0 is for the internal laptop camera, 1 is for an external webcam
     face_cascade = cv.CascadeClassifier(cv.data.haarcascades + 'haarcascade_frontalface_default.xml')
     while True:
         isTrue, frame = capture.read()
-
+        # print(len(frame[1]))
         gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
         faces = face_cascade.detectMultiScale(gray, 1.05, 8, minSize= (120,120))
 
