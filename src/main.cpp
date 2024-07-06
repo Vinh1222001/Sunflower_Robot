@@ -11,8 +11,6 @@ static uint8_t y_angle = MIN_ANGLE;
 Servo myservo1; //rotate range = [0,80] for up-down
 Servo myservo2; //rotate range = [0,180] for left-right
 
-int pos = 0;    // variable to store the servo position
-
 String faceLocation;
 
 void setup() {
