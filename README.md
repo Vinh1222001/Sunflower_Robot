@@ -18,7 +18,11 @@ Software:
     - OpenCV `4.10.0` for human face detection using Python
     - pyserial `3.5` for communicating with serial port using Python
     - Servo by `Michael Margolis 1.2.1` on PlatformIO 
+
+## Implement Timeline
+This project is implemented from June 22, 2024 to July 5,2024
+![Timeline](./images/sunflower_robot_timeline_eng_v1.1.png)
 ## Result
 You can watch the demo video on my youtube channel by clicking [here](https://youtube.com/shorts/oLIsh41mzJ8). 
 
-![Sunflower Robot demo](./images/Sunflower_Robot_demo_img.jpg)
+![Sunflower Robot demo](./images/Sunflower_robot_demo_img.jpg)
