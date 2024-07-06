@@ -21,4 +21,4 @@ Software:
 ## Result
 You can watch the demo video on my youtube channel by clicking [here](https://youtube.com/shorts/oLIsh41mzJ8). 
 
-![Sunflower Robot demo](./images/Sunflower_Robot_demo_img.jpg)
+![Sunflower Robot demo](./images/Sunflower_robot_demo_img.jpg)
