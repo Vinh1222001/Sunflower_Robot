@@ -1,11 +1,11 @@
 import serial
 import cv2 as cv
-import time
+# import time
 from serial.tools import list_ports
 
-ports = list(list_ports.comports())
-for port in ports:
-    print(port.device)
+# ports = list(list_ports.comports())
+# for port in ports:
+#     print(port.device)
 
 portName = "/dev/ttyACM0"
 
